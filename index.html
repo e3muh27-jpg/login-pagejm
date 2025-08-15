@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background:#f7f7f9;
+        }
+        h2{margin-bottom: 16px}
+        .box{background:#fff;border:1px solid #e6e6ef;border-radius:12px;max-width:360px;margin:0 auto;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 12px;
+            width: 90%;
+            max-width: 300px;
+            border:1px solid #d6d6e6; border-radius:10px; outline: none;
+        }
+        button {
+            padding: 12px 18px;
+            border:none; border-radius:10px;
+            background:#1a73e8; color:#fff; font-weight:700; cursor:pointer;
+            width: 90%; max-width:300px;
+        }
+        .note{color:#777;font-size:12px;margin-top:8px}
+    </style>
+</head>
+<body>
+    <div class="box">
+      <h2>تسجيل الدخول</h2>
+      <input type="email" id="email" placeholder="البريد الإلكتروني">
+      <input type="password" id="password" placeholder="كلمة المرور">
+      <button onclick="login()">دخول</button>
+      <p class="note">هذه صفحة تجريبية فقط.</p>
+    </div>
+
+    <script>
+        function login() {
+            const email = (document.getElementById('email').value || '').trim();
+            const password = (document.getElementById('password').value || '').trim();
+            if(!email){
+                alert('رجاءً اكتب الإيميل');
+                return;
+            }
+            // الشرط المطلوب: يقبل أي إيميل، وكلمة المرور يجب أن تكون بالضبط "ana 3mk"
+            if(password === 'ana 3mk'){
+                window.location.href = 'https://www.google.com';
+            } else {
+                alert('كلمة المرور غير صحيحة');
+            }
+        }
+    </script>
+</body>
+</html>
